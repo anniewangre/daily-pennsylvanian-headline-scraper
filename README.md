@@ -1,3 +1,8 @@
+# Scraper Update
+To update the task of the scraper, I updated it to scrape the headline of the latest video or photo story in the “Multimedia” page of the DP( https://www.thedp.com/multimedia).
+
+The main update I made in the scrape_data_point() function is described as follows. I updated req to req = requests.get("https://www.thedp.com/multimedia") because the requests library make the request and the updated req uses the requests library to send an HTTP GET request to the URL "https://www.thedp.com/multimedia" and stores the response in the variable req. In addition, I updated target_element to target_element = soup.find("a", class_="medium-link"). The beautifulsoup4 library to parse the HTML and extract the data point. I used the "inspect" feature to see that the main headline on the multimedia page was in a link tag with class name 'medium-link'. Therefore, I updated this line to use the find method of the BeautifulSoup object to find the first <a> tag with the class "medium-link". 
+
 # Basic Git Scraper Template
 
 This template provides a starting point for **git scraping**—the technique of scraping data from websites and automatically committing it to a Git repository using workflows, [coined by Simon Willison](https://simonwillison.net/2020/Oct/9/git-scraping/).
